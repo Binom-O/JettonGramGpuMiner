@@ -36,7 +36,6 @@ done;
 EOF
 
 chmod +x /root/JettonGramGpuMiner/mine.sh
-screen -dmS mining /root/JettonGramGpuMiner/mine.sh
 echo "" >> /etc/supervisor/conf.d/supervisord.conf
 echo "[program:mining]" >> /etc/supervisor/conf.d/supervisord.conf
 echo "command=/bin/bash -c 'screen -dmS mining bash /root/mine.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf

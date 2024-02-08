@@ -8,7 +8,6 @@ apt install mc -y
 apt install htop -y
 
 
-cd ~
 curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
 apt-get install -y nodejs
 git clone https://github.com/TrueCarry/JettonGramGpuMiner.git

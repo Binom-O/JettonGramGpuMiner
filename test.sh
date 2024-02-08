@@ -1,3 +1,3 @@
 #!/bin/bash
 x="sasai"
-echo x
+echo $x

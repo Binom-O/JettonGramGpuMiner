@@ -1,6 +1,3 @@
 #!/bin/bash
-cd ~
-cat <<EOF > test.sh
-  x="sasai"
-EOF
-./test.sh
+x="sasai"
+echo x

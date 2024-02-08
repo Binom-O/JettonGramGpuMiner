@@ -2,10 +2,8 @@
 
 GPU_COUNT=$(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l)	
 
-apt update -y
 apt install screen -y
 apt install git -y
-apt install curl -y
 apt install mc -y
 apt install htop -y
 

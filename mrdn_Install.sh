@@ -8,19 +8,11 @@ apt install mc -y
 apt install htop -y
 
 
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-source ~/.bashrc
-chmod +x /root/.nvm/nvm.sh
-source /root/.nvm/nvm.sh
-nvm install 16
 cd ~
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
+apt-get install -y nodejs
 git clone https://github.com/TrueCarry/JettonGramGpuMiner.git
 cd JettonGramGpuMiner
-wget https://github.com/tontechio/pow-miner-gpu/releases/download/20211230.1/minertools-cuda-ubuntu-18.04-x86-64.tar.gz
-tar -xvf minertools-cuda-ubuntu-18.04-x86-64.tar.gz
-git clone https://github.com/forsbors/gr.git
-mv -f /root/JettonGramGpuMiner/gr/send_multigpu.js /root/JettonGramGpuMiner/
-
 
 cat <<EOF > /root/JettonGramGpuMiner/mine.sh
 #!/bin/bash

@@ -3,4 +3,4 @@ cd ~
 cat <<EOF > test.sh
   x="sasai"
 EOF
-echo x
+./test.sh

@@ -82,7 +82,7 @@ cat > mine.sh << EOL
 #!/bin/bash
 
 GIVERS=1000
-TIMEOUT=4
+TIMEOUT=7
 API="tonapi"
 
 GPU_COUNT=\$(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l) > /dev/null 2>&1

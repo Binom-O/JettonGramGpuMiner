@@ -15,8 +15,6 @@ git clone https://github.com/TrueCarry/JettonGramGpuMiner.git
 cd JettonGramGpuMiner
 wget https://github.com/tontechio/pow-miner-gpu/releases/download/20211230.1/minertools-cuda-ubuntu-18.04-x86-64.tar.gz
 tar -xvf minertools-cuda-ubuntu-18.04-x86-64.tar.gz
-echo "SEED=$SEED
-TARGET_ADDRESS=$TARGET_ADDRESS" > config.txt
 
 cat <<EOF > /root/JettonGramGpuMiner/mine.sh
 #!/bin/bash

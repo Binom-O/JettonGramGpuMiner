@@ -127,11 +127,7 @@ chmod +x mine.sh
 
 if [ ! -f config.txt ]; then
     cat > config.txt << EOL
-SEED=
-TONAPI_TOKEN=
-TARGET_ADDRESS=
-EOL
-fi
+
 
 echo ""
 echo    "+------------------------------------------------------------------------+"

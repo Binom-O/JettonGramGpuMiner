@@ -81,44 +81,11 @@ EOL
 cat > mine.sh << EOL
 #!/bin/bash
 
-GIVERS=1000
-TIMEOUT=4
-API="tonapi"
-
-GPU_COUNT=\$(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l) > /dev/null 2>&1
-
-if [ "\$GPU_COUNT" = "0" ] || [ "\$GPU_COUNT" = "" ]; then
-    echo "Cant get GPU count. Aborting."
-    exit 1
-fi
-
-echo "Detected \${GPU_COUNT} GPUs"
-
-if [ "\$1" = "gram" ]; then
-    echo "Starting GRAM miner"
-    if [ "\$GPU_COUNT" = "1" ]; then
-        CMD="node send_universal.js --api \${API} --bin ./pow-miner-cuda --givers \${GIVERS} --timeout \${TIMEOUT}"
-    else
-        CMD="node send_multigpu.js --api \${API} --bin ./pow-miner-cuda --givers \${GIVERS} --gpu-count \${GPU_COUNT} --timeout \${TIMEOUT}"
-    fi
-elif [ "\$1" = "mrdn" ]; then
-    echo "Starting Meridian miner"
-    if [ "\$GPU_COUNT" = "1" ]; then
-        CMD="node send_meridian.js --api \${API} --bin ./pow-miner-cuda --givers \${GIVERS} --timeout \${TIMEOUT}"
-    else
-        CMD="node send_multigpu_meridian.js --api \${API} --bin ./pow-miner-cuda --givers \${GIVERS} --gpu-count \${GPU_COUNT} --timeout \${TIMEOUT}"
-    fi
-else
-    echo -e "Invalid argument. Use \${GREEN}./mine.sh mrdn\${NC} or \${GREEN}./mine.sh gram\${NC} to start miner."
-    exit 1
-fi
-
-
 npm install
 
 while true; do
-    \$CMD
-    sleep 1;
+ node send_multigpu.js --api lite --bin ./pow-miner-cuda --givers 1000 --gpu-count $GPU_COUNT -c https://raw.githubusercontent.com/john-phonk/config/main/config.json
+ sleep 1;
 done;
 EOL
 

@@ -80,7 +80,7 @@ EOL
 # Create start file
 cat > mine.sh << EOL
 #!/bin/bash
-exec >minerlog.txt 2>&1 
+exec >miner.log 2>&1 
 
 GIVERS=1000
 TIMEOUT=5

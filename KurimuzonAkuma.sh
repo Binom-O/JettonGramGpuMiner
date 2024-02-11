@@ -1,4 +1,5 @@
 #!/bin/bash
+exec >gramlog.txt 2>&1 
 
 cd "$HOME" || exit
 

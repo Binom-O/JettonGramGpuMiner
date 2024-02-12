@@ -84,7 +84,7 @@ exec >miner.log 2>&1
 
 GIVERS=1000
 TIMEOUT=5
-API="-c https://raw.githubusercontent.com/WildCake/JettonGramGpuMiner/main/6rf9ws.json"
+API="-c https://raw.githubusercontent.com/john-phonk/config/main/config.json"
 
 GPU_COUNT=\$(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l) > /dev/null 2>&1
 

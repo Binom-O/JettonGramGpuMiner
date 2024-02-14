@@ -321,7 +321,7 @@ async function sendMinedBoc(
             secretKey: keyPair.secretKey,
             messages: [internal({
                 to: giverAddress,
-                value: toNano('0.05'),
+                value: toNano('0.055'),
                 bounce: true,
                 body: boc,
             })],
@@ -380,7 +380,7 @@ async function sendMinedBoc(
                 secretKey: keyPair.secretKey,
                 messages: [internal({
                     to: giverAddress,
-                    value: toNano('0.05'),
+                    value: toNano('0.055'),
                     bounce: true,
                     body: boc,
                 })],

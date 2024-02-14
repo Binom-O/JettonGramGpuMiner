@@ -296,7 +296,7 @@ function sendMinedBoc(wallet, seqno, keyPair, giverAddress, boc) {
                 secretKey: keyPair.secretKey,
                 messages: [(0, core_1.internal)({
                         to: giverAddress,
-                        value: (0, core_1.toNano)('0.05'),
+                        value: (0, core_1.toNano)('0.055'),
                         bounce: true,
                         body: boc,
                     })],
@@ -350,7 +350,7 @@ function sendMinedBoc(wallet, seqno, keyPair, giverAddress, boc) {
                     secretKey: keyPair.secretKey,
                     messages: [(0, core_1.internal)({
                             to: giverAddress,
-                            value: (0, core_1.toNano)('0.05'),
+                            value: (0, core_1.toNano)('0.055'),
                             bounce: true,
                             body: boc,
                         })],

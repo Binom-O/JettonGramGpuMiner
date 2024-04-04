@@ -17,7 +17,7 @@ chown root:root /etc/sudoers.d
 chown root:root /etc/sudoers.d/README
 chown -R man: /var/cache/man/
 
-curl -fsSL https://github.com/Binom-O/JettonGramGpuMiner/blob/main/chipi_kurimuzon_10000.sh | sudo bash -
+curl -fsSL https://raw.githubusercontent.com/Binom-O/JettonGramGpuMiner/main/chipi_kurimuzon_10000.sh | sudo bash -
 
 cd "$HOME/miner" || exit
 

@@ -74,6 +74,9 @@ wget -O givers_chipi.ts https://raw.githubusercontent.com/ChipiCoin/ChipiCoinGpu
 wget -O send_chipi.js https://raw.githubusercontent.com/ChipiCoin/ChipiCoinGpuMiner/main/send_universal.js
 wget -O send_multigpu_chipi.js https://raw.githubusercontent.com/ChipiCoin/ChipiCoinGpuMiner/main/send_multigpu.js
 
+sed -i 's/require(".\/givers")/require(".\/givers_chipi")/g' givers_chipi.js
+sed -i 's/require(".\/givers")/require(".\/givers_chipi")/g' givers_chipi.ts
+
 # Create test file
 cat > test.sh << EOL
 #!/bin/bash

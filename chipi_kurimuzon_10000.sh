@@ -80,7 +80,6 @@ sed -i 's/require(".\/givers")/require(".\/givers_chipi")/g' send_multigpu_chipi
 # Create test file
 cat > test.sh << EOL
 #!/bin/bash
-exec >miner_10000.log 2>&1 
 
 "$HOME"/miner/pow-miner-cuda -g 0 -F 128 -t 5 kQBWkNKqzCAwA9vjMwRmg7aY75Rf8lByPA9zKXoqGkHi8SM7 229760179690128740373110445116482216837 53919893334301279589334030174039261347274288845081144962207220498400000000000 10000000000 kQBWkNKqzCAwA9vjMwRmg7aY75Rf8lByPA9zKXoqGkHi8SM7 mined.boc
 EOL
@@ -88,6 +87,7 @@ EOL
 # Create start file
 cat > mine.sh << EOL
 #!/bin/bash
+exec >miner_10000.log 2>&1 
 
 GIVERS=10000
 TIMEOUT=4

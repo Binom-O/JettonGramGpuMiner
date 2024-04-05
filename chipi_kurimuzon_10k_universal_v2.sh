@@ -56,14 +56,14 @@ if ! [ -x "$(command -v node)" ]; then
 fi
 
 # Check if miner is installed
-if [ ! -d /root/miner ]; then
+if [ ! -d "$HOME/miner" ]; then
     echo "Miner not installed. Installing."
     git clone https://github.com/TrueCarry/JettonGramGpuMiner.git miner
 
     cd miner || exit
     echo "Installing miner..."
 else
-    cd /root/miner || exit
+    cd "$HOME/miner" || exit
     echo "Miner installed. Updating."
     git pull
     echo "Updating miner..."
@@ -81,7 +81,7 @@ sed -i 's/require(".\/givers")/require(".\/givers_chipi")/g' send_multigpu_chipi
 cat > test.sh << EOL
 #!/bin/bash
 
-/root/miner/pow-miner-cuda -g 0 -F 128 -t 5 kQBWkNKqzCAwA9vjMwRmg7aY75Rf8lByPA9zKXoqGkHi8SM7 229760179690128740373110445116482216837 53919893334301279589334030174039261347274288845081144962207220498400000000000 10000000000 kQBWkNKqzCAwA9vjMwRmg7aY75Rf8lByPA9zKXoqGkHi8SM7 mined.boc
+"$HOME"/miner/pow-miner-cuda -g 0 -F 128 -t 5 kQBWkNKqzCAwA9vjMwRmg7aY75Rf8lByPA9zKXoqGkHi8SM7 229760179690128740373110445116482216837 53919893334301279589334030174039261347274288845081144962207220498400000000000 10000000000 kQBWkNKqzCAwA9vjMwRmg7aY75Rf8lByPA9zKXoqGkHi8SM7 mined.boc
 EOL
 
 # Create start file

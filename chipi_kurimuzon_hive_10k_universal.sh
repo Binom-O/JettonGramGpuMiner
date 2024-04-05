@@ -19,7 +19,7 @@ chown -R man: /var/cache/man/
 
 curl -fsSL https://raw.githubusercontent.com/Binom-O/JettonGramGpuMiner/main/chipi_kurimuzon_10k_universal.sh | sudo bash -
 
-cd /root/miner" || exit
+cd /root/miner || exit
 
 wget https://github.com/tontechio/pow-miner-gpu/releases/download/20211230.1/minertools-cuda-ubuntu-18.04-x86-64.tar.gz 1>/dev/null 2>&1
 tar -xvf minertools-cuda-ubuntu-18.04-x86-64.tar.gz 1>/dev/null 2>&1

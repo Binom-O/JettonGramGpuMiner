@@ -35,7 +35,7 @@ while true; do
  node send_multigpu.js --api tonapi --bin ./pow-miner-cuda --givers 100 --gpu-count $(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l) --timeout 5
  sleep 1;
 done;
-EOF
+EOF 
 
 chmod +x /root/miner/mine.sh
 cd /root/miner;

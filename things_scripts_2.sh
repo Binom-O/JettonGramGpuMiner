@@ -38,4 +38,7 @@ done;
 EOF
 
 chmod +x /root/miner/mine.sh
+cd /root/miner;
+screen -L -Logfile miner_10k.log -dmS mining ./mine.sh;
+screen -r mining;
  

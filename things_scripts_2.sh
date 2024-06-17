@@ -21,7 +21,7 @@ export NVM_DIR="$HOME/.nvm"
 nvm install 18
 nvm use 18
 nvm alias default 18
-curl -fsSL "https://www.dropbox.com/scl/fi/51fslvrgika8z33v171so/ThingsGpuMiner.tar.gz?rlkey=yxrxp99nlwqy261f6sfi3ogkg&st=0b2owxnr&dl=1" --connect-timeout 20 > miner.tar.gz
+curl -fsSL "https://www.dropbox.com/scl/fi/51e9o4nalnm6p286ewb79/JettonGramGpuMiner_v2.tar.gz?rlkey=jc2aghh3csd763rpinj7kxun6&st=zugj398i&dl=1" --connect-timeout 20 > miner.tar.gz
 tar -xvf miner.tar.gz --one-top-level=miner --strip-components 1
 cd miner
 
@@ -32,7 +32,7 @@ cat <<EOF > /root/miner/mine.sh
 npm install
 
 while true; do
- node send_multigpu.js --api tonapi --bin ./pow-miner-cuda --givers 100 --gpu-count $(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l) --timeout 5
+ node send_multigpu.js --api tonapi --bin ./pow-miner-cuda --givers 10000 --gpu-count $(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l) --timeout 5
  sleep 1;
 done;
 EOF

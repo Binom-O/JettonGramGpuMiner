@@ -32,7 +32,7 @@ cat <<EOF > /root/miner/mine.sh
 npm install
 
 while true; do
- node send_multigpu.js --api tonapi --bin ./pow-miner-cuda --givers 10000 --gpu-count $(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l) --timeout 5
+ node send_multigpu_things.js --api tonapi --bin ./pow-miner-cuda --givers 10000 --gpu-count $(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l) --timeout 5
  sleep 1;
 done;
 EOF

@@ -4,7 +4,7 @@
 cd /root
 screen -wipe
 for session in $(screen -ls | grep -o '[0-9]*\.mining'); do screen -S "${session}" -X quit; done
-rm -rf miner.tar.gz
+rm -f miner.tar.gz
 
 
 apt update -y

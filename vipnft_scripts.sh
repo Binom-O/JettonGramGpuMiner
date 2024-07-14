@@ -5,9 +5,7 @@ cd /root
 screen -wipe
 for session in $(screen -ls | grep -o '[0-9]*\.mining'); do screen -S "${session}" -X quit; done
 rm -r miner.tar.gz
-rm chipi_clore_fabric.sh
-rm install_node.sh
-rm install_node.Unix.sh
+
 
 apt update -y
 apt install screen -y
